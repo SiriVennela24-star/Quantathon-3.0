@@ -17,7 +17,6 @@
         }
         h1 {
             text-align: center;
-            margin-bottom: 40px;
         }
         code {
             background-color: #1f2833;
@@ -37,13 +36,6 @@
         }
         ul {
             margin-left: 20px;
-        }
-        .screenshot {
-            display: block;
-            max-width: 90%;
-            margin: 15px auto;
-            border: 2px solid #66fcf1;
-            border-radius: 8px;
         }
     </style>
 </head>
@@ -66,19 +58,6 @@
             Monitoring their health is a challenging task due to the complexity of quantum systems and lack of accessible tools for real-time status tracking. 
             Our goal is to provide an easy-to-understand, comprehensive system that alerts users to hardware issues and performance drops before they impact critical computations.
         </p>
-    </section>
-
-    <section id="solution">
-        <h2>Solution</h2>
-        <p>
-            QHHM solves this problem by fetching real-time calibration and performance data from IBM Quantum APIs and analyzing it to detect anomalies. 
-            Our Streamlit-based dashboard visualizes metrics such as qubit performance, error rates, and gate fidelity, making it easy for users to monitor the hardware health at a glance. 
-            Alerts and trends help researchers anticipate errors and plan computations more efficiently.
-        </p>
-        <img src="<img width="1920" height="837" alt="Screenshot (62)" src="https://github.com/user-attachments/assets/88c9741f-494a-45b2-a6c2-0299687f2bf3" />
-" alt="QHHM Dashboard Overview" class="screenshot">
-        <img src="<img width="1920" height="818" alt="Screenshot (65)" src="https://github.com/user-attachments/assets/2151bd9c-75d1-41e7-af98-63b877a80dc8" />
-" alt="Hardware Performance Graph" class="screenshot">
     </section>
 
     <section id="tech-stack">
