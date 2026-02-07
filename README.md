@@ -1,118 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Hardware Health Monitor (QHHM)</title>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xh6u8gX4k2T8+H+hkt4A+G9Sm7ZoH9ZH6iHh25D9hZjBje1I5rXwH9R6d5K/Ny6zYfZ9QO6sZ4RGX6S/0uZ5Tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+# Quantum Hardware Health Monitor (QHHM)  
+**Team:** Qubit Queens  
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #0b0c10;
-            color: #c5c6c7;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #ffd700;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        code {
-            background-color: #1f2833;
-            color: #66fcf1;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-        a {
-            color: #66fcf1;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        .icon {
-            margin-right: 8px;
-            color: #66fcf1;
-        }
-    </style>
-</head>
-<body>
+---
 
-    <h1><i class="fas fa-robot icon"></i>Quantum Hardware Health Monitor (QHHM)</h1>
+## **Project Overview**
+The **Quantum Hardware Health Monitor (QHHM)** is an interactive, modular dashboard designed to simulate and visualize the health of quantum hardware, specifically targeting **Noisy Intermediate-Scale Quantum (NISQ)** devices. It allows users to monitor qubit calibration, gate errors, readout errors, and overall hardware health without needing access to physical quantum computers.  
 
-    <section id="overview">
-        <h2><i class="fas fa-eye icon"></i>Overview</h2>
-        <p>
-            The Quantum Hardware Health Monitor (QHHM) is an innovative dashboard designed to continuously monitor the performance and reliability of quantum computers. 
-            By leveraging real-time calibration data and IBM Quantum APIs, our system provides insights into the health of quantum hardware, ensuring accurate computations and efficient operation for quantum researchers and developers.
-        </p>
-    </section>
+QHHM provides **educational insights, prototyping capabilities, and operational readiness assessment** for quantum applications, making it easier to understand how errors affect algorithms and how mitigation strategies can improve hardware performance.
 
-    <section id="problem-statement">
-        <h2><i class="fas fa-exclamation-triangle icon"></i>Problem Statement</h2>
-        <p>
-            Quantum computers are highly sensitive to environmental noise and hardware errors, which can drastically affect computation accuracy. 
-            Monitoring their health is a challenging task due to the complexity of quantum systems and lack of accessible tools for real-time status tracking. 
-            Our goal is to provide an easy-to-understand, comprehensive system that alerts users to hardware issues and performance drops before they impact critical computations.
-        </p>
-    </section>
+---
 
-    <section id="tech-stack">
-        <h2><i class="fas fa-tools icon"></i>Tech Stack</h2>
-        <ul>
-            <li><i class="fab fa-python icon"></i><strong>Python:</strong> Core programming language for backend logic and data processing.</li>
-            <li><i class="fas fa-network-wired icon"></i><strong>Qiskit & IBM Quantum Provider API:</strong> To fetch real-time calibration and performance data from IBM quantum devices.</li>
-            <li><i class="fas fa-desktop icon"></i><strong>Streamlit:</strong> Frontend dashboard for interactive and user-friendly visualization.</li>
-            <li><i class="fas fa-chart-line icon"></i><strong>Matplotlib & NumPy:</strong> For plotting performance trends and statistical analysis.</li>
-        </ul>
-    </section>
+## **Motivation / Problem Statement**
+Running quantum algorithms on NISQ devices is challenging due to:
+- Qubit decoherence (T1/T2 times)  
+- Gate and readout errors  
+- Instability of hardware over time  
 
-    <section id="feasibility">
-        <h2><i class="fas fa-check-circle icon"></i>Feasibility</h2>
-        <p>
-            Our system is highly feasible as it utilizes publicly available IBM Quantum APIs, Python libraries, and lightweight frontend tools. 
-            The modular design allows easy integration with multiple quantum hardware providers, enabling real-time monitoring without additional infrastructure.
-        </p>
-    </section>
+Quantum developers need a **reliable way to monitor hardware health** before running algorithms, to reduce wasted runtime and improve results. QHHM simulates this monitoring process with synthetic, API-key seeded calibration data, providing insights on hardware readiness.
 
-    <section id="why-it-matters">
-        <h2><i class="fas fa-heart icon"></i>Why Our Project Matters</h2>
-        <p>
-            Accurate quantum computations are crucial for advancements in cryptography, AI, material science, and more. 
-            By proactively monitoring quantum hardware health, QHHM reduces the risk of computation errors, saving time and resources for researchers. 
-            It bridges the gap between complex quantum systems and human-friendly monitoring tools, making quantum technology more accessible and reliable.
-        </p>
-    </section>
+---
 
-    <section id="future-work">
-        <h2><i class="fas fa-lightbulb icon"></i>Future Work</h2>
-        <ul>
-            <li><i class="fas fa-robot icon"></i> Integration with multiple quantum hardware providers beyond IBM.</li>
-            <li><i class="fas fa-brain icon"></i> Predictive analytics using AI/ML to anticipate hardware failures.</li>
-            <li><i class="fas fa-chart-pie icon"></i> Enhanced dashboard visualizations with customizable alerts and notifications.</li>
-            <li><i class="fas fa-mobile-alt icon"></i> Mobile-friendly interface for monitoring on-the-go.</li>
-        </ul>
-    </section>
+## **Project Objectives**
+- Simulate NISQ hardware behavior using deterministic calibration data  
+- Calculate key metrics: **error rate, health score, fidelity**  
+- Predict and visualize the impact of **mitigation strategies**  
+- Provide **interactive visualizations** for easier understanding of hardware health  
+- Serve as a **prototype operations dashboard** for quantum engineers  
 
-    <section id="conclusion">
-        <h2><i class="fas fa-flag-checkered icon"></i>Conclusion</h2>
-        <p>
-            QHHM empowers quantum computing practitioners by providing a real-time, interactive, and insightful view into hardware performance. 
-            With its modular design, future-ready architecture, and user-friendly interface, QHHM is a vital tool for making quantum computing safer, faster, and more reliable.
-        </p>
-    </section>
+---
 
-</body>
-</html>
+## **Technology Stack**
+- **Python 3.10+** – Core programming language  
+- **Streamlit** – Interactive dashboard UI  
+- **Qiskit** – Quantum circuit simulation and execution  
+- **NumPy** – Synthetic calibration data generation and calculations  
+- **Matplotlib** – Visualizations (bar charts, gauges)  
+- **Optional:** IBM Quantum API for live hardware integration in future  
+
+---
+
+## **Project Architecture**
+QHHM follows a **three-layer architecture**:
+
+**1. Input Layer**  
+- User provides **API key**  
+- Synthetic qubit calibration data (T1, T2, gate/readout errors)  
+- Benchmark quantum circuit definition  
+
+**2. Backend Layer**  
+- Generate key-dependent calibration data  
+- Compute metrics: **error rate, health score, fidelity**  
+- Detect errors & generate alerts  
+- Simulate benchmark circuit execution  
+- Apply and simulate **mitigation strategies**  
+- Prepare before/after metrics for comparison  
+
+**3. Frontend Layer (Streamlit UI)**  
+- Accepts API key input  
+- Displays:
+  - Current hardware metrics  
+  - After-mitigation metrics  
+  - Alerts and benchmark counts  
+  - Interactive visualizations (charts, gauges, comparisons)  
+
+**Visual Suggestion:** Include the **animated dashboard diagram** or **Input → Process → Output infographic**.
+
+---
+
+## **Project Workflow**
+1. User enters API key → Backend generates synthetic calibration data.  
+2. Compute **error rate, health score, and fidelity** from calibration.  
+3. Simulate benchmark quantum circuit → Extract outcomes.  
+4. Detect errors → Suggest mitigation strategies (measurement correction, circuit optimization).  
+5. Display metrics and visualizations in Streamlit UI.  
+6. Show **before vs after mitigation** comparison for better understanding.
+
+---
+
+## **Inputs & Outputs**
+
+| **Input** | **Output** |
+|-----------|------------|
+| API Key | Hardware health score (before & after) |
+| Synthetic calibration data (T1/T2, gate errors, readout errors) | Error alerts & mitigation suggestions |
+| Benchmark quantum circuit | Interactive visualizations: bar charts, gauges, comparison panels |
+| Thresholds for error/fidelity | Educational insights into qubit behavior |
+
+---
+
+## **Expected Outcomes**
+- Deterministic hardware health scores based on API key  
+- Error alerts highlighting problematic qubits or gates  
+- Predicted effects of mitigation strategies (before/after metrics)  
+- Interactive visualizations for developers and learners  
+- A teaching tool for understanding NISQ device behavior  
+
+**Visuals:** Use the **Expected Outcomes infographic** or **dashboard diagrams**.
+
+---
+
+## **Applications**
+1. **Educational Tool** – Learn about qubit errors, decoherence, and mitigation strategies.  
+2. **Prototype Operations Dashboard** – Track simulated quantum hardware health before running real algorithms.  
+3. **Algorithm Readiness Assessment** – Decide if a backend is suitable for executing quantum workloads safely.  
+
+---
+
+## **Advantages & Disadvantages**
+**Advantages:**  
+- Modular design allows **future integration with real IBM Quantum devices**  
+- Fast, reproducible **simulations without physical hardware**  
+- Interactive **visualizations** help understand hardware health  
+- Helps **educational and prototyping purposes**
+
+**Disadvantages:**  
+- Not connected to **live hardware yet**  
+- Mitigation predictions are **simulated**, not executed on real devices  
+- Cannot fully capture **all physical noise and drift** present in real NISQ systems  
+
+---
+
+## **How Qiskit is Used**
+- `QuantumCircuit()` – Define benchmark circuit  
+- `Aer.get_backend('qasm_simulator')` + `execute()` – Run simulation  
+- `result.get_counts()` – Extract outcome counts  
+- Metrics are computed using synthetic calibration data  
+- Circuit diagram displayed in UI for visual explanation  
+
+---
+
+## **How to Run QHHM in VS Code**
+
+1. **Clone the repository:**  
+```bash
+git clone https://github.com/your-username/QHHM.git
+cd QHHM
+
+Create a virtual environment:
+
+python -m venv venv
+# Activate:
+# Windows: venv\Scripts\activate
+# macOS/Linux: source venv/bin/activate
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Run the Streamlit app:
+
+streamlit run app.py
